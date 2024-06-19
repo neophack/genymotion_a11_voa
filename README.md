@@ -33,8 +33,17 @@ ro.dalvik.vm.isa.arm64=x86_64
 ro.zygote=zygote64_32' | tee -a system/build.prop >> system/vendor/build.prop
 ```
 
-# 放置ova到~/.Genymobile/Genymotion/ova
+# 下载放置ova到~/.Genymobile/Genymotion/ova
 # 删除原有~/.Genymobile/Genymotion/system-images/3.1.0/11.0.0
 # 新建虚拟机选择安卓11
 
 ![image](https://github.com/neophack/genymotion_a11_voa/assets/12814250/0896f0b9-3302-477b-becc-981d64b5f154)
+
+# 服务器运行genymotion
+```
+sudo apt install xvfb
+Xvfb :99 -screen 0 1024x768x24 &
+sudo apt-get install x11vnc
+export DISPLAY=:99
+x11vnc -display :99
+```
